@@ -1,0 +1,19 @@
+{
+        "files.associations": {
+                "array": "cpp",
+                "string": "cpp",
+                "string_view": "cpp",
+                "*.ipp": "cpp",
+                "any": "cpp",
+                "*.tcc": "cpp",
+                "memory": "cpp",
+                "fstream": "cpp",
+                "istream": "cpp",
+                "ostream": "cpp",
+                "sstream": "cpp",
+                "streambuf": "cpp",
+                "*.txx": "cpp",
+                "mutex": "cpp",
+                "condition_variable": "cpp"
+        }
+}

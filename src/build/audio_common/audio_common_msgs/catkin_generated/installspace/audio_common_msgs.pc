@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: audio_common_msgs
+Description: Description of audio_common_msgs
+Version: 0.3.11
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib 
+Requires: message_runtime

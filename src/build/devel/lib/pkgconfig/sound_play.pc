@@ -1,0 +1,8 @@
+prefix=/home/ucar/ucar_ws/src/build/devel
+
+Name: sound_play
+Description: Description of sound_play
+Version: 0.3.11
+Cflags: -I/home/ucar/ucar_ws/src/build/devel/include -I/home/ucar/ucar_ws/src/audio_common/sound_play/include
+Libs: -L/home/ucar/ucar_ws/src/build/devel/lib 
+Requires: message_runtime actionlib_msgs
