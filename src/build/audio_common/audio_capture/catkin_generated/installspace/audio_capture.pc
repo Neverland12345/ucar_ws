@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: audio_capture
+Description: Description of audio_capture
+Version: 0.3.11
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

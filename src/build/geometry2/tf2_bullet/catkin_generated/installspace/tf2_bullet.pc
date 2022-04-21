@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: tf2_bullet
+Description: Description of tf2_bullet
+Version: 0.6.5
+Cflags: -I/usr/local/include -I/usr/include/bullet
+Libs: -L/usr/local/lib 
+Requires: 

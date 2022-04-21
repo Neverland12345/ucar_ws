@@ -1,0 +1,6 @@
+<launch>
+
+	<node name="tts_subscribe" pkg="robot_voice" type="tts_subscribe" output="screen"/>
+	<node name="tts_publisher" pkg="robot_voice" type="tts_publisher" output="screen"/>
+
+</launch>

@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: tf2_kdl
+Description: Description of tf2_kdl
+Version: 0.6.5
+Cflags: -I/usr/local/include -I/usr/include/eigen3 -I/opt/ros/melodic/share/orocos_kdl/cmake/../../../include
+Libs: -L/usr/local/lib /opt/ros/melodic/lib/liborocos-kdl.so.1.4.0
+Requires: 

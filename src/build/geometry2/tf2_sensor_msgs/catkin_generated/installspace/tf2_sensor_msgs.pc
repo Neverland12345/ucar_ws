@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: tf2_sensor_msgs
+Description: Description of tf2_sensor_msgs
+Version: 0.6.5
+Cflags: -I/usr/local/include -I/usr/include/eigen3
+Libs: -L/usr/local/lib 
+Requires: sensor_msgs tf2_ros tf2
