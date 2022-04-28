@@ -68,13 +68,15 @@ def classes_callback(msg):
             print ("h=",h)
 
 def goal_callback(msg):
-    global f,Img_3
-    if msg.status.status == 3:       #判断是否到达
-        if f <4:
-            rospy.sleep(0.3)
-        f =f+1 
-        if f==4:
-            img_pub.publish(Img_3)
+    # global f,Img_3
+    # print("goal_callback回调函数")
+    # if msg.status.status == 3:       #判断是否到达
+    #     if f <4:
+    #         rospy.sleep(0.3)
+    #     f =f+1 
+    #     if f==4:
+    #         img_pub.publish(Img_3)
+    print("11111111111111")
                    
         
 def img_callback(data):
@@ -83,6 +85,7 @@ def img_callback(data):
     bridge = CvBridge()
     if f==1 :
         if img_flag == 0:
+            print("图像保存程序")
             img_flag = 1
             goal_flag =1
             Img_1 = data

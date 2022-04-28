@@ -12,8 +12,8 @@ import numpy as np
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 import cv2
+from actionlib_msgs.msg import GoalStatusArray
 
-print("第一行")
 f =0 
 img_flag = 0
 # class_dict = {'gh_00':0,'gh_01':0,'gh_02':0,'gh_10':0,'gh_11':0,'gh_12':0,'gh_20':0,'gh_21':0,'gh_22':0}
@@ -29,6 +29,8 @@ h3 = 0
 goal_flag = 0
 g = 0
 h = 0
+flag=0
+flag2=0
 
 
 
@@ -47,7 +49,7 @@ h = 0
 
 
 def classes_callback(msg):
-    global g1,h1,g2,h2,g3,h3,g4,h4,g,h
+    global g1,h1,g2,h2,g3,h3,g,h
     global bridge,f,Img_1,Img_2,Img_3,Img_4,img_flag
     if f == 1:
         g1 = msg.glass_num
@@ -60,21 +62,27 @@ def classes_callback(msg):
         h3 = msg.long_hair_cut_num
     elif f == 4:
         if img_flag>=3:
-            g4 = msg.glass_num
-            h4 = msg.long_hair_num
-            print ("g1,g2,g3,g4 = ",g1,g2,g3,g4)
-            print ("h1,h2,h3,h4 = ",h1,h2,h3,h4)
+            g3 = msg.glass_num
+            h3 = msg.long_hair_num
+            print ("g1,g2,g3,g4 = ",g1,g2,g3)
+            print ("h1,h2,h3,h4 = ",h1,h2,h3)
             print ("g=",g)
             print ("h=",h)
 
 def goal_callback(msg):
-    global f,Img_3
-    if msg.status.status == 3:       #判断是否到达
-        if f <4:
-            rospy.sleep(0.3)
-        f =f+1 
-        if f==4:
-            img_pub.publish(Img_3)
+    global flag ,flag2, f
+    if len(msg.status_list)==1 and flag==0:
+        if len(msg.status_list)==1 and flag==0 and msg.status_list[0].status==3:
+            f+=1
+            flag=1
+    if  len(msg.status_list)==2 and msg.status_list[1].status==1 and flag2==1:
+        flag2=0
+    if  len(msg.status_list)==2 and msg.status_list[1].status==3 and flag2==0:
+        f+=1
+        flag2=1
+    if len(msg.status_list)==1 and flag2 ==1 and flag==1:
+        flag2=0
+    print(f)
                    
         
 def img_callback(data):
@@ -174,11 +182,13 @@ if __name__ == '__main__':
     print("执行1")
     rospy.init_node('play', anonymous=True)
     print("执行")
-    rospy.Subscriber("move_base/result",MoveBaseActionResult,goal_callback)  #判断是否到达既定目标点
+
     rospy.Subscriber("/darknet_ros/classes_num",classes,classes_callback)
     rospy.Subscriber('usb_cam/image_raw', Image, img_callback)
+    rospy.Subscriber("move_base/status",GoalStatusArray,goal_callback)
     #rospy.Subscriber('/goal_id', String, goal_id_callback)
     goal_pub = rospy.Publisher('/move_base_simple/goal', PoseStamped, queue_size=1)
     img_pub = rospy.Publisher('/final_image',Image,queue_size=1)
+    # rospy.Subscriber("/move_base/result",MoveBaseActionResult,goal1_callback)  #判断是否到达既定目标点
     # argv = rospy.myargv()
-    rospy.spin()
+    rospy.spin()    

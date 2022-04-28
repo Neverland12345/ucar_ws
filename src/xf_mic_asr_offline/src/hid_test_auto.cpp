@@ -27,10 +27,6 @@
 
 #include <std_srvs/Trigger.h> //chufafuwu
 
-//xiao
-#include <move_base_msgs/MoveBaseAction.h>
-#include <actionlib/client/simple_action_client.h>
-
 ros::Publisher goal_pub; //mubiaodian
 
 ros::Publisher pub_pcm;
@@ -802,34 +798,6 @@ bool Get_Awake_Angle(xf_mic_asr_offline::Get_Awake_Angle_srv::Request &req,
 	return true;
 }
 
-//xiao
-typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
-
-struct goal_pose
-{
-    double pose[3];
-    double orientation[4];
-};
-
-struct goal_pose set_point[]=
-{
-	 //这里可以添加自己的多个导航目标点
-     {3.37875837467,-2.253833412967,0,0,0,-0.00435611210075,0.799990512099}, 
-	 {3.37875837467,-2.253833412967,0,0,0,-0.00435611210075,0.799990512099},
-	 {2.46175837467,-3.273833412967,0,0,0,-0.00435611210075,0.799990512099},
-	  {2.46175837467,-3.273833412967,0,0,0,-0.00435611210075,0.799990512099},
-	 {0.41075837467,-3.019833412967,0,0,0,-0.00435611210075,0.799990512099},
-	 {0.41075837467,-3.019833412967,0,0,0,-0.00435611210075,0.799990512099},  
-	{0.26175837467,-0.672833412967,0,0,0,-0.00435611210075,0.799990512099},
-	{0.26175837467,-0.672833412967,0,0,0,-0.00435611210075,0.799990512099}        
-};
-int size =sizeof(set_point)/sizeof(goal_pose);
-
-
-
-
-
-
 /*程序入口*/
 int main(int argc, char *argv[])
 {
@@ -917,69 +885,26 @@ int main(int argc, char *argv[])
 	printf(">>>>>设置主麦成功！\n");
 
 	ROS_INFO("Ready to receive command");
-	// while(ros::ok())
-	// {
-	// 	if(1) //pubCommand
-	// 	{
-	// 	geometry_msgs::PoseStamped goal_pose;
-    //     	goal_pose.header.frame_id = "map";
-    //     	goal_pose.pose.position.x =  2.02479720116; // 2.60925364494;
-    //     	goal_pose.pose.position.y = 3.29980039597;//1.15061187744;
-    //     	goal_pose.pose.position.z = 0.0;
-    //     	goal_pose.pose.orientation.x = 0;
-    //     	goal_pose.pose.orientation.y = 0;
-    //     	goal_pose.pose.orientation.z = -0.0101698932772;//0.995692950469;
-    //     	goal_pose.pose.orientation.w =  0.999948285298;//0.0927121803506;
-	// 	goal_pub.publish(goal_pose);
-	// 		//pubCommand=0;
-	// 	}
-	// 	ros::shutdown();
-	// }
+	while(ros::ok())
+	{
+		if(1) //pubCommand
+		{
+		geometry_msgs::PoseStamped goal_pose;
+        	goal_pose.header.frame_id = "map";
+        	goal_pose.pose.position.x =  3.37879720116; // 2.60925364494;
+        	goal_pose.pose.position.y = -2.25980039597;//1.15061187744;
+        	goal_pose.pose.position.z = 0.0;
+        	goal_pose.pose.orientation.x = 0;
+        	goal_pose.pose.orientation.y = 0;
+        	goal_pose.pose.orientation.z = -0.0101698932772;//0.995692950469;
+        	goal_pose.pose.orientation.w =  0.999948285298;//0.0927121803506;
+		goal_pub.publish(goal_pose);
+			//pubCommand=0;
+		}
+		ros::shutdown();
+	}
 	
-
-//xiao
- ros::init(argc, argv, "simple_navigation_goals");
-    MoveBaseClient ac("move_base",true);
-
-    while (!ac.waitForServer(ros::Duration(1.0)))
-    {
-       ROS_INFO("waiting for the move_base action server to come up");
-    }
-    
-    for(int i=0;i<size;i++)  
-    {
-        struct goal_pose point=set_point[i];
-        move_base_msgs::MoveBaseGoal goal;
-
-        //goal.target_pose.header.frame_id="base_link"; //局部定位
-	    goal.target_pose.header.frame_id="map";			//全局定位
-        goal.target_pose.header.stamp=ros::Time::now();
-
-        goal.target_pose.pose.position.x=point.pose[0];
-        goal.target_pose.pose.position.y=point.pose[1];
-        goal.target_pose.pose.position.z=point.pose[2];
-        goal.target_pose.pose.orientation.x=point.orientation[0];
-        goal.target_pose.pose.orientation.y=point.orientation[1];
-        goal.target_pose.pose.orientation.z=point.orientation[2];        
-        goal.target_pose.pose.orientation.w=point.orientation[3];
-
-        ROS_INFO("sending goal ...");
-        ac.sendGoal(goal);
-        ROS_INFO("goal executing ...");
-        ac.waitForResult();
-        if(ac.getState()==actionlib::SimpleClientGoalState::SUCCEEDED)
-        {
-            ROS_INFO("the base move goal execute succsess ...");
-            continue;   //如果到达目标点想继续循环运动，则设为continue
-            //break;        //如果到达目标点之后，想停止，则break     
-        }	 
-        else{
-            ROS_INFO("the base move goal execute failed ...");
-            break;
-        }
-    }
-
-	// ros::waitForShutdown();
+	ros::waitForShutdown();
 
 	hid_close();
 	return 0;
