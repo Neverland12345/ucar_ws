@@ -5,9 +5,9 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
+import geometry_msgs.msg
 import std_msgs.msg
 import actionlib_msgs.msg
-import geometry_msgs.msg
 import genpy
 import tf2_msgs.msg
 
@@ -830,24 +830,18 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_7dB = None
-def _get_struct_7dB():
-    global _struct_7dB
-    if _struct_7dB is None:
-        _struct_7dB = struct.Struct("<7dB")
-    return _struct_7dB
 _struct_2I2i2I = None
 def _get_struct_2I2i2I():
     global _struct_2I2i2I
     if _struct_2I2i2I is None:
         _struct_2I2i2I = struct.Struct("<2I2i2I")
     return _struct_2I2i2I
-_struct_2I = None
-def _get_struct_2I():
-    global _struct_2I
-    if _struct_2I is None:
-        _struct_2I = struct.Struct("<2I")
-    return _struct_2I
+_struct_7dB = None
+def _get_struct_7dB():
+    global _struct_7dB
+    if _struct_7dB is None:
+        _struct_7dB = struct.Struct("<7dB")
+    return _struct_7dB
 _struct_B = None
 def _get_struct_B():
     global _struct_B
@@ -860,3 +854,9 @@ def _get_struct_B3I():
     if _struct_B3I is None:
         _struct_B3I = struct.Struct("<B3I")
     return _struct_B3I
+_struct_2I = None
+def _get_struct_2I():
+    global _struct_2I
+    if _struct_2I is None:
+        _struct_2I = struct.Struct("<2I")
+    return _struct_2I

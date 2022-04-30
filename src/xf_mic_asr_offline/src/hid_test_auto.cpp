@@ -891,14 +891,14 @@ int main(int argc, char *argv[])
 		{
 		geometry_msgs::PoseStamped goal_pose;
         	goal_pose.header.frame_id = "map";
-        	goal_pose.pose.position.x =  3.37879720116; // 2.60925364494;
-        	goal_pose.pose.position.y = -2.25980039597;//1.15061187744;
-        	goal_pose.pose.position.z = 0.0;
+        	goal_pose.pose.position.x =  3.378; // 2.60925364494;
+        	goal_pose.pose.position.y = -2.259;//1.15061187744;
+        	goal_pose.pose.position.z = 0;
         	goal_pose.pose.orientation.x = 0;
         	goal_pose.pose.orientation.y = 0;
-        	goal_pose.pose.orientation.z = -0.0101698932772;//0.995692950469;
-        	goal_pose.pose.orientation.w =  0.999948285298;//0.0927121803506;
-		goal_pub.publish(goal_pose);
+        	goal_pose.pose.orientation.z = -0.010;//0.995692950469;
+        	goal_pose.pose.orientation.w =  0.799;//0.0927121803506;
+		    goal_pub.publish(goal_pose);
 			//pubCommand=0;
 		}
 		ros::shutdown();

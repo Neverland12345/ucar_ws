@@ -5,10 +5,10 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
-import genpy
-import sound_play.msg
-import std_msgs.msg
 import actionlib_msgs.msg
+import genpy
+import std_msgs.msg
+import sound_play.msg
 
 class SoundRequestAction(genpy.Message):
   _md5sum = "f990cf5de6a2f8e514e825b2c1f4810b"
@@ -661,18 +661,12 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_B5I = None
-def _get_struct_B5I():
-    global _struct_B5I
-    if _struct_B5I is None:
-        _struct_B5I = struct.Struct("<B5I")
-    return _struct_B5I
-_struct_2bf = None
-def _get_struct_2bf():
-    global _struct_2bf
-    if _struct_2bf is None:
-        _struct_2bf = struct.Struct("<2bf")
-    return _struct_2bf
+_struct_B = None
+def _get_struct_B():
+    global _struct_B
+    if _struct_B is None:
+        _struct_B = struct.Struct("<B")
+    return _struct_B
 _struct_B2I = None
 def _get_struct_B2I():
     global _struct_B2I
@@ -691,9 +685,15 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_B = None
-def _get_struct_B():
-    global _struct_B
-    if _struct_B is None:
-        _struct_B = struct.Struct("<B")
-    return _struct_B
+_struct_2bf = None
+def _get_struct_2bf():
+    global _struct_2bf
+    if _struct_2bf is None:
+        _struct_2bf = struct.Struct("<2bf")
+    return _struct_2bf
+_struct_B5I = None
+def _get_struct_B5I():
+    global _struct_B5I
+    if _struct_B5I is None:
+        _struct_B5I = struct.Struct("<B5I")
+    return _struct_B5I

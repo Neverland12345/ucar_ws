@@ -14,6 +14,7 @@ from cv_bridge import CvBridge, CvBridgeError
 import cv2
 from actionlib_msgs.msg import GoalStatusArray
 
+a=0
 f =0 
 img_flag = 0
 # class_dict = {'gh_00':0,'gh_01':0,'gh_02':0,'gh_10':0,'gh_11':0,'gh_12':0,'gh_20':0,'gh_21':0,'gh_22':0}
@@ -70,19 +71,20 @@ def classes_callback(msg):
             print ("h=",h)
 
 def goal_callback(msg):
-    global flag ,flag2, f
-    if len(msg.status_list)==1 and flag==0:
-        if len(msg.status_list)==1 and flag==0 and msg.status_list[0].status==3:
-            f+=1
-            flag=1
-    if  len(msg.status_list)==2 and msg.status_list[1].status==1 and flag2==1:
-        flag2=0
-    if  len(msg.status_list)==2 and msg.status_list[1].status==3 and flag2==0:
-        f+=1
-        flag2=1
-    if len(msg.status_list)==1 and flag2 ==1 and flag==1:
-        flag2=0
+    global flag ,flag2, f,a
     print(f)
+    sta1=str(msg.status_list)
+    print(sta1.find('status'))
+    status=int(sta1[sta1.find('status')+8])
+    if status==1:
+        a=1
+    if status== 3 and a==1:       #判断是否到达
+        if f <4:
+            rospy.sleep(1)
+            f =f+1
+            a=0 
+        if f==4:
+            img_pub.publish(Img_3)
                    
         
 def img_callback(data):
@@ -121,13 +123,13 @@ def img_callback(data):
             print ('2.jpg')
             goal_pose = PoseStamped()
             goal_pose.header.frame_id = "map"
-            goal_pose.pose.position.x = 0.79925364494
-            goal_pose.pose.position.y = 2.41861187744
+            goal_pose.pose.position.x = 0.9555364494
+            goal_pose.pose.position.y = -3.0811861187744
             goal_pose.pose.position.z = 0.0
             goal_pose.pose.orientation.x = 0
             goal_pose.pose.orientation.y = 0
-            goal_pose.pose.orientation.z = -0.710692950469
-            goal_pose.pose.orientation.w = 0.7047121803506
+            goal_pose.pose.orientation.z = -0.750692950469
+            goal_pose.pose.orientation.w = 0.6047121803506
             goal_pub.publish(goal_pose)
     elif f==3 :
         if img_flag == 2:
@@ -164,11 +166,11 @@ def img_callback(data):
                 g = 2
             if h>2:
                 h = 2
-            argv = '/home/ucar/ucar_ws/src/audio_common/mp3/gh_'+str(g)+str(h)+'.mp3'
+            argv = '/home/ucar/ucar_ws/src/audio_common/mp3/gh_01.mp3'
             soundhandle = SoundClient()
             rospy.sleep(1)
             rospy.loginfo('Playing "%s".' % argv)
-            volume = 1.0
+            volume = 10
             soundhandle.playWave(argv, volume)    
             print ('goal rrrrrrrrrrrrrrrrrrrrrrrrrrrr')
     else:

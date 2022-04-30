@@ -5,8 +5,8 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
-import geometry_msgs.msg
 import std_msgs.msg
+import geometry_msgs.msg
 
 class Marker(genpy.Message):
   _md5sum = "3f1f32688aa7271ee1d9fa3bf0c33422"
@@ -238,18 +238,18 @@ def _get_struct_36d():
     if _struct_36d is None:
         _struct_36d = struct.Struct("<36d")
     return _struct_36d
-_struct_d = None
-def _get_struct_d():
-    global _struct_d
-    if _struct_d is None:
-        _struct_d = struct.Struct("<d")
-    return _struct_d
 _struct_I7d = None
 def _get_struct_I7d():
     global _struct_I7d
     if _struct_I7d is None:
         _struct_I7d = struct.Struct("<I7d")
     return _struct_I7d
+_struct_d = None
+def _get_struct_d():
+    global _struct_d
+    if _struct_d is None:
+        _struct_d = struct.Struct("<d")
+    return _struct_d
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I

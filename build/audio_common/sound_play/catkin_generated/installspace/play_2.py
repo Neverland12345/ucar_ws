@@ -79,6 +79,7 @@ def classes_callback(msg):
             print ("h=",h)
 
 def goal_callback(msg):
+    print("回调函数")
     global f,Img_4
     if msg.status.status == 3:       
         if f <=1 or f==3 or f ==4:
@@ -92,7 +93,7 @@ def img_callback(data):
     # define picture to_down' coefficient of ratio
     global bridge,f,img_flag,Img_1,Img_2,Img_3,Img_4,goal_flag,g,h,g1,h1,g2,h2,g3,h3,g4,h4
     bridge = CvBridge()
-    print (img_flag)
+    # print (img_flag)
     if f==1 :
         if img_flag == 0:
             img_flag = 1

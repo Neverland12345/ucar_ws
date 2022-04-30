@@ -746,15 +746,6 @@
 /home/ucar/ucar_ws/build/ucar_nav/CMakeFiles/install/local.dir
 /home/ucar/ucar_ws/build/ucar_nav/CMakeFiles/rebuild_cache.dir
 /home/ucar/ucar_ws/build/ucar_nav/CMakeFiles/install.dir
-/home/ucar/ucar_ws/build/usb_cam/CMakeFiles/install.dir
-/home/ucar/ucar_ws/build/usb_cam/CMakeFiles/install/strip.dir
-/home/ucar/ucar_ws/build/usb_cam/CMakeFiles/usb_cam_node.dir
-/home/ucar/ucar_ws/build/usb_cam/CMakeFiles/install/local.dir
-/home/ucar/ucar_ws/build/usb_cam/CMakeFiles/usb_cam.dir
-/home/ucar/ucar_ws/build/usb_cam/CMakeFiles/test.dir
-/home/ucar/ucar_ws/build/usb_cam/CMakeFiles/list_install_components.dir
-/home/ucar/ucar_ws/build/usb_cam/CMakeFiles/edit_cache.dir
-/home/ucar/ucar_ws/build/usb_cam/CMakeFiles/rebuild_cache.dir
 /home/ucar/ucar_ws/build/move_base/voxel_grid/CMakeFiles/install/strip.dir
 /home/ucar/ucar_ws/build/move_base/voxel_grid/CMakeFiles/install.dir
 /home/ucar/ucar_ws/build/move_base/voxel_grid/CMakeFiles/list_install_components.dir

@@ -4,8 +4,8 @@ from std_msgs.msg import String
 from sound_play.msg import SoundRequest
 from sound_play.libsoundplay import SoundClient
 from darknet_ros_msgs.msg import classes
-# from move_base_msgs.msg import MoveBaseAction
-# from move_base_msgs.msg import MoveBaseGoal
+from move_base_msgs.msg import MoveBaseAction
+from move_base_msgs.msg import MoveBaseGoal
 from move_base_msgs.msg import MoveBaseActionResult
 from geometry_msgs.msg import PoseStamped, PoseWithCovarianceStamped
 import numpy as np
@@ -68,14 +68,14 @@ def classes_callback(msg):
             print ("h=",h)
 
 def goal_callback(msg):
-    # global f,Img_3
-    # print("goal_callback回调函数")
-    # if msg.status.status == 3:       #判断是否到达
-    #     if f <4:
-    #         rospy.sleep(0.3)
-    #     f =f+1 
-    #     if f==4:
-    #         img_pub.publish(Img_3)
+    global f,Img_3
+    print("goal_callback回调函数")
+    if msg.data == 3:       #判断是否到达
+        if f <4:
+            rospy.sleep(0.3)
+        f =f+1 
+        if f==4:
+            img_pub.publish(Img_3)
     print("11111111111111")
                    
         
@@ -177,7 +177,7 @@ if __name__ == '__main__':
     print("执行1")
     rospy.init_node('play', anonymous=True)
     print("执行")
-    rospy.Subscriber("move_base/result",MoveBaseActionResult,goal_callback)  #判断是否到达既定目标点
+    rospy.Subscriber("/move_base/result/status",Int32,goal_callback)  #判断是否到达既定目标点
     rospy.Subscriber("/darknet_ros/classes_num",classes,classes_callback)
     rospy.Subscriber('usb_cam/image_raw', Image, img_callback)
     #rospy.Subscriber('/goal_id', String, goal_id_callback)
