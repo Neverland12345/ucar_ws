@@ -1,0 +1,8 @@
+prefix=/home/ucar/ucar_ws/install
+
+Name: move_base
+Description: Description of move_base
+Version: 1.16.7
+Cflags: -I/home/ucar/ucar_ws/install/include
+Libs: -L/home/ucar/ucar_ws/install/lib 
+Requires: dynamic_reconfigure geometry_msgs move_base_msgs nav_msgs roscpp

@@ -1,0 +1,8 @@
+prefix=/home/ucar/ucar_ws/install
+
+Name: voxel_grid
+Description: Description of voxel_grid
+Version: 1.16.7
+Cflags: -I/home/ucar/ucar_ws/install/include
+Libs: -L/home/ucar/ucar_ws/install/lib -lvoxel_grid
+Requires: roscpp
