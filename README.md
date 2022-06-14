@@ -1,4 +1,4 @@
-# 智能驾驶小车ros示例代码介绍
+# 智能驾驶小车ros代码介绍
 [TOC]
 ## 简介
 该示例代码包含整个ROS的workspace。用`catkin_make`编译即可使用。
