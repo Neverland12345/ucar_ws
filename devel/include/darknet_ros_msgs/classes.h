@@ -27,13 +27,17 @@ struct classes_
     : glass_num(0)
     , long_hair_num(0)
     , glass_cut_num(0)
-    , long_hair_cut_num(0)  {
+    , long_hair_cut_num(0)
+    , short_hair_num(0)
+    , short_hair_cut_num(0)  {
     }
   classes_(const ContainerAllocator& _alloc)
     : glass_num(0)
     , long_hair_num(0)
     , glass_cut_num(0)
-    , long_hair_cut_num(0)  {
+    , long_hair_cut_num(0)
+    , short_hair_num(0)
+    , short_hair_cut_num(0)  {
   (void)_alloc;
     }
 
@@ -50,6 +54,12 @@ struct classes_
 
    typedef int16_t _long_hair_cut_num_type;
   _long_hair_cut_num_type long_hair_cut_num;
+
+   typedef int16_t _short_hair_num_type;
+  _short_hair_num_type short_hair_num;
+
+   typedef int16_t _short_hair_cut_num_type;
+  _short_hair_cut_num_type short_hair_cut_num;
 
 
 
@@ -129,12 +139,12 @@ struct MD5Sum< ::darknet_ros_msgs::classes_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "e6802d1037088d3136af614c2e78487e";
+    return "807f252bc3466dd12378a82941c798f7";
   }
 
   static const char* value(const ::darknet_ros_msgs::classes_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xe6802d1037088d31ULL;
-  static const uint64_t static_value2 = 0x36af614c2e78487eULL;
+  static const uint64_t static_value1 = 0x807f252bc3466dd1ULL;
+  static const uint64_t static_value2 = 0x2378a82941c798f7ULL;
 };
 
 template<class ContainerAllocator>
@@ -157,6 +167,8 @@ struct Definition< ::darknet_ros_msgs::classes_<ContainerAllocator> >
 "int16 long_hair_num\n"
 "int16 glass_cut_num\n"
 "int16 long_hair_cut_num\n"
+"int16 short_hair_num\n"
+"int16 short_hair_cut_num\n"
 ;
   }
 
@@ -179,6 +191,8 @@ namespace serialization
       stream.next(m.long_hair_num);
       stream.next(m.glass_cut_num);
       stream.next(m.long_hair_cut_num);
+      stream.next(m.short_hair_num);
+      stream.next(m.short_hair_cut_num);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -205,6 +219,10 @@ struct Printer< ::darknet_ros_msgs::classes_<ContainerAllocator> >
     Printer<int16_t>::stream(s, indent + "  ", v.glass_cut_num);
     s << indent << "long_hair_cut_num: ";
     Printer<int16_t>::stream(s, indent + "  ", v.long_hair_cut_num);
+    s << indent << "short_hair_num: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.short_hair_num);
+    s << indent << "short_hair_cut_num: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.short_hair_cut_num);
   }
 };
 

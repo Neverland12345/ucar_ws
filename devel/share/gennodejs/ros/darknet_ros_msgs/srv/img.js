@@ -171,7 +171,7 @@ class imgResponse {
   }
 
   static getMessageSize(object) {
-    return 8;
+    return 12;
   }
 
   static datatype() {
@@ -181,7 +181,7 @@ class imgResponse {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '3b3d2b25c18f07e6d5050302bd9d5d58';
+    return 'a13e6e0b66542b89487e32a4f77acf85';
   }
 
   static messageDefinition() {
@@ -195,6 +195,8 @@ class imgResponse {
     int16 long_hair_num
     int16 glass_cut_num
     int16 long_hair_cut_num
+    int16 short_hair_num
+    int16 short_hair_cut_num
     `;
   }
 
@@ -218,6 +220,6 @@ class imgResponse {
 module.exports = {
   Request: imgRequest,
   Response: imgResponse,
-  md5sum() { return 'cc46e969b0824e89bc25423516cc80f7'; },
+  md5sum() { return '359be61846392affdfa43a82630b4f76'; },
   datatype() { return 'darknet_ros_msgs/img'; }
 };

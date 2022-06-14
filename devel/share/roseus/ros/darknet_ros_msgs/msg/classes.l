@@ -14,7 +14,7 @@
 
 (defclass darknet_ros_msgs::classes
   :super ros::object
-  :slots (_glass_num _long_hair_num _glass_cut_num _long_hair_cut_num ))
+  :slots (_glass_num _long_hair_num _glass_cut_num _long_hair_cut_num _short_hair_num _short_hair_cut_num ))
 
 (defmethod darknet_ros_msgs::classes
   (:init
@@ -23,12 +23,16 @@
     ((:long_hair_num __long_hair_num) 0)
     ((:glass_cut_num __glass_cut_num) 0)
     ((:long_hair_cut_num __long_hair_cut_num) 0)
+    ((:short_hair_num __short_hair_num) 0)
+    ((:short_hair_cut_num __short_hair_cut_num) 0)
     )
    (send-super :init)
    (setq _glass_num (round __glass_num))
    (setq _long_hair_num (round __long_hair_num))
    (setq _glass_cut_num (round __glass_cut_num))
    (setq _long_hair_cut_num (round __long_hair_cut_num))
+   (setq _short_hair_num (round __short_hair_num))
+   (setq _short_hair_cut_num (round __short_hair_cut_num))
    self)
   (:glass_num
    (&optional __glass_num)
@@ -42,6 +46,12 @@
   (:long_hair_cut_num
    (&optional __long_hair_cut_num)
    (if __long_hair_cut_num (setq _long_hair_cut_num __long_hair_cut_num)) _long_hair_cut_num)
+  (:short_hair_num
+   (&optional __short_hair_num)
+   (if __short_hair_num (setq _short_hair_num __short_hair_num)) _short_hair_num)
+  (:short_hair_cut_num
+   (&optional __short_hair_cut_num)
+   (if __short_hair_cut_num (setq _short_hair_cut_num __short_hair_cut_num)) _short_hair_cut_num)
   (:serialization-length
    ()
    (+
@@ -52,6 +62,10 @@
     ;; int16 _glass_cut_num
     2
     ;; int16 _long_hair_cut_num
+    2
+    ;; int16 _short_hair_num
+    2
+    ;; int16 _short_hair_cut_num
     2
     ))
   (:serialize
@@ -66,6 +80,10 @@
        (write-word _glass_cut_num s)
      ;; int16 _long_hair_cut_num
        (write-word _long_hair_cut_num s)
+     ;; int16 _short_hair_num
+       (write-word _short_hair_num s)
+     ;; int16 _short_hair_cut_num
+       (write-word _short_hair_cut_num s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -78,21 +96,27 @@
      (setq _glass_cut_num (sys::peek buf ptr- :short)) (incf ptr- 2)
    ;; int16 _long_hair_cut_num
      (setq _long_hair_cut_num (sys::peek buf ptr- :short)) (incf ptr- 2)
+   ;; int16 _short_hair_num
+     (setq _short_hair_num (sys::peek buf ptr- :short)) (incf ptr- 2)
+   ;; int16 _short_hair_cut_num
+     (setq _short_hair_cut_num (sys::peek buf ptr- :short)) (incf ptr- 2)
    ;;
    self)
   )
 
-(setf (get darknet_ros_msgs::classes :md5sum-) "e6802d1037088d3136af614c2e78487e")
+(setf (get darknet_ros_msgs::classes :md5sum-) "807f252bc3466dd12378a82941c798f7")
 (setf (get darknet_ros_msgs::classes :datatype-) "darknet_ros_msgs/classes")
 (setf (get darknet_ros_msgs::classes :definition-)
       "int16 glass_num  
 int16 long_hair_num
 int16 glass_cut_num
 int16 long_hair_cut_num
+int16 short_hair_num
+int16 short_hair_cut_num
 ")
 
 
 
-(provide :darknet_ros_msgs/classes "e6802d1037088d3136af614c2e78487e")
+(provide :darknet_ros_msgs/classes "807f252bc3466dd12378a82941c798f7")
 
 

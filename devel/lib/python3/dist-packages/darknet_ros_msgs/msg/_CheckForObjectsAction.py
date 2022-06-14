@@ -5,11 +5,11 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
+import sensor_msgs.msg
 import std_msgs.msg
 import darknet_ros_msgs.msg
-import sensor_msgs.msg
-import actionlib_msgs.msg
 import genpy
+import actionlib_msgs.msg
 
 class CheckForObjectsAction(genpy.Message):
   _md5sum = "98095af4078a4c5df88f8e6a4db52e32"
@@ -862,12 +862,12 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_3I = None
-def _get_struct_3I():
-    global _struct_3I
-    if _struct_3I is None:
-        _struct_3I = struct.Struct("<3I")
-    return _struct_3I
+_struct_B = None
+def _get_struct_B():
+    global _struct_B
+    if _struct_B is None:
+        _struct_B = struct.Struct("<B")
+    return _struct_B
 _struct_2I = None
 def _get_struct_2I():
     global _struct_2I
@@ -880,21 +880,21 @@ def _get_struct_d4qh():
     if _struct_d4qh is None:
         _struct_d4qh = struct.Struct("<d4qh")
     return _struct_d4qh
-_struct_BI = None
-def _get_struct_BI():
-    global _struct_BI
-    if _struct_BI is None:
-        _struct_BI = struct.Struct("<BI")
-    return _struct_BI
 _struct_h3I = None
 def _get_struct_h3I():
     global _struct_h3I
     if _struct_h3I is None:
         _struct_h3I = struct.Struct("<h3I")
     return _struct_h3I
-_struct_B = None
-def _get_struct_B():
-    global _struct_B
-    if _struct_B is None:
-        _struct_B = struct.Struct("<B")
-    return _struct_B
+_struct_BI = None
+def _get_struct_BI():
+    global _struct_BI
+    if _struct_BI is None:
+        _struct_BI = struct.Struct("<BI")
+    return _struct_BI
+_struct_3I = None
+def _get_struct_3I():
+    global _struct_3I
+    if _struct_3I is None:
+        _struct_3I = struct.Struct("<3I")
+    return _struct_3I

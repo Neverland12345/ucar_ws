@@ -10,7 +10,7 @@
 #include "darknet_ros/YoloObjectDetector.hpp"
 
 // Check for xServer
-#include <X11/Xlib.h>
+#include <X11/Xlib.h>+
 
 #ifdef DARKNET_FILE_PATH
 std::string darknetFilePath_ = DARKNET_FILE_PATH;
@@ -563,7 +563,9 @@ void* YoloObjectDetector::publishInThread() {
     darknet_ros_msgs::classes classes_num;
     classes_num.glass_num = 0;
     classes_num.long_hair_num = 0;
+    classes_num.short_hair_num = 0;//xiao
     classes_num.glass_cut_num = 0;
+    classes_num.short_hair_cut_num = 0;//xiao
     classes_num.long_hair_cut_num =0;
     for (int i = 0; i < numClasses_; i++) {
       if (rosBoxCounter_[i] > 0) {
@@ -596,6 +598,14 @@ void* YoloObjectDetector::publishInThread() {
           if (xmax > 340)
           {
             classes_num.long_hair_cut_num++; 
+          }
+        }
+        else if(classLabels_[i]=="short_hair")//xiaos
+        {
+          classes_num.short_hair_num++;
+          if(xmax>340)
+          {
+            classes_num.short_hair_num++;
           }
         }
         }

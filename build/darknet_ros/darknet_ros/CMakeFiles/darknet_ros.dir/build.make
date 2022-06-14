@@ -94,14 +94,14 @@ darknet_ros_EXTERNAL_OBJECTS =
 /home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/lib/aarch64-linux-gnu/libICE.so
 /home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/lib/aarch64-linux-gnu/libX11.so
 /home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/lib/aarch64-linux-gnu/libXext.so
-/home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/local/cuda-10.0/lib64/libcudart_static.a
+/home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/local/cuda/lib64/libcudart_static.a
 /home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/lib/aarch64-linux-gnu/librt.so
 /home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /home/ucar/ucar_ws/devel/lib/libdarknet_ros_lib.so
 /home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/lib/aarch64-linux-gnu/libSM.so
 /home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/lib/aarch64-linux-gnu/libICE.so
 /home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/lib/aarch64-linux-gnu/libX11.so
 /home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/lib/aarch64-linux-gnu/libXext.so
-/home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/local/cuda-10.0/lib64/libcudart_static.a
+/home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/local/cuda/lib64/libcudart_static.a
 /home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/lib/aarch64-linux-gnu/librt.so
 /home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/local/lib/libopencv_cudabgsegm.so.3.3.1
 /home/ucar/ucar_ws/devel/lib/darknet_ros/darknet_ros: /usr/local/lib/libopencv_cudaobjdetect.so.3.3.1

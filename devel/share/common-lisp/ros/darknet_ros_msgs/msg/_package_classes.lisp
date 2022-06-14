@@ -7,4 +7,8 @@
           GLASS_CUT_NUM
           LONG_HAIR_CUT_NUM-VAL
           LONG_HAIR_CUT_NUM
+          SHORT_HAIR_NUM-VAL
+          SHORT_HAIR_NUM
+          SHORT_HAIR_CUT_NUM-VAL
+          SHORT_HAIR_CUT_NUM
 ))

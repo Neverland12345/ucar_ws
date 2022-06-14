@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::darknet_ros_msgs::img > {
   static const char* value()
   {
-    return "cc46e969b0824e89bc25423516cc80f7";
+    return "359be61846392affdfa43a82630b4f76";
   }
 
   static const char* value(const ::darknet_ros_msgs::img&) { return value(); }

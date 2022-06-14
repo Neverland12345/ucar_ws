@@ -5,10 +5,10 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
-import genpy
-import actionlib_msgs.msg
 import std_msgs.msg
+import actionlib_msgs.msg
 import sound_play.msg
+import genpy
 
 class SoundRequestActionGoal(genpy.Message):
   _md5sum = "7ff89ce2a5f72c86a28be8ae82658bf8"
@@ -339,18 +339,18 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2bf = None
-def _get_struct_2bf():
-    global _struct_2bf
-    if _struct_2bf is None:
-        _struct_2bf = struct.Struct("<2bf")
-    return _struct_2bf
 _struct_2I = None
 def _get_struct_2I():
     global _struct_2I
     if _struct_2I is None:
         _struct_2I = struct.Struct("<2I")
     return _struct_2I
+_struct_2bf = None
+def _get_struct_2bf():
+    global _struct_2bf
+    if _struct_2bf is None:
+        _struct_2bf = struct.Struct("<2bf")
+    return _struct_2bf
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I

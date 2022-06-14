@@ -115,12 +115,12 @@ struct MD5Sum< ::darknet_ros_msgs::imgResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "3b3d2b25c18f07e6d5050302bd9d5d58";
+    return "a13e6e0b66542b89487e32a4f77acf85";
   }
 
   static const char* value(const ::darknet_ros_msgs::imgResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x3b3d2b25c18f07e6ULL;
-  static const uint64_t static_value2 = 0xd5050302bd9d5d58ULL;
+  static const uint64_t static_value1 = 0xa13e6e0b66542b89ULL;
+  static const uint64_t static_value2 = 0x487e32a4f77acf85ULL;
 };
 
 template<class ContainerAllocator>
@@ -147,6 +147,8 @@ struct Definition< ::darknet_ros_msgs::imgResponse_<ContainerAllocator> >
 "int16 long_hair_num\n"
 "int16 glass_cut_num\n"
 "int16 long_hair_cut_num\n"
+"int16 short_hair_num\n"
+"int16 short_hair_cut_num\n"
 ;
   }
 

@@ -106,7 +106,7 @@
   :super ros::object
   :slots ())
 
-(setf (get darknet_ros_msgs::img :md5sum-) "cc46e969b0824e89bc25423516cc80f7")
+(setf (get darknet_ros_msgs::img :md5sum-) "359be61846392affdfa43a82630b4f76")
 (setf (get darknet_ros_msgs::img :datatype-) "darknet_ros_msgs/img")
 (setf (get darknet_ros_msgs::img :request) darknet_ros_msgs::imgRequest)
 (setf (get darknet_ros_msgs::img :response) darknet_ros_msgs::imgResponse)
@@ -114,7 +114,7 @@
 (defmethod darknet_ros_msgs::imgRequest
   (:response () (instance darknet_ros_msgs::imgResponse :init)))
 
-(setf (get darknet_ros_msgs::imgRequest :md5sum-) "cc46e969b0824e89bc25423516cc80f7")
+(setf (get darknet_ros_msgs::imgRequest :md5sum-) "359be61846392affdfa43a82630b4f76")
 (setf (get darknet_ros_msgs::imgRequest :datatype-) "darknet_ros_msgs/imgRequest")
 (setf (get darknet_ros_msgs::imgRequest :definition-)
       "sensor_msgs/Image img
@@ -172,9 +172,11 @@ MSG: darknet_ros_msgs/classes
 int16 glass_num  
 int16 long_hair_num
 int16 glass_cut_num
+int16 long_hair_cut_num
+int16 short_hair_num
 ")
 
-(setf (get darknet_ros_msgs::imgResponse :md5sum-) "cc46e969b0824e89bc25423516cc80f7")
+(setf (get darknet_ros_msgs::imgResponse :md5sum-) "359be61846392affdfa43a82630b4f76")
 (setf (get darknet_ros_msgs::imgResponse :datatype-) "darknet_ros_msgs/imgResponse")
 (setf (get darknet_ros_msgs::imgResponse :definition-)
       "sensor_msgs/Image img
@@ -232,10 +234,12 @@ MSG: darknet_ros_msgs/classes
 int16 glass_num  
 int16 long_hair_num
 int16 glass_cut_num
+int16 long_hair_cut_num
+int16 short_hair_num
 ")
 
 
 
-(provide :darknet_ros_msgs/img "cc46e969b0824e89bc25423516cc80f7")
+(provide :darknet_ros_msgs/img "359be61846392affdfa43a82630b4f76")
 
 

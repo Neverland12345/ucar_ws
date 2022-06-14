@@ -62,7 +62,7 @@ def classes_callback(msg):
         if img_flag>=3:
             g4 = msg.glass_num
             h4 = msg.long_hair_num
-            print ("g1,g2,g3,g4 = ",g1,g2,g3,g4)
+            print ("g1,g2,g3,g44 = ",g1,g2,g3,g4)
             print ("h1,h2,h3,h4 = ",h1,h2,h3,h4)
             print ("g=",g)
             print ("h=",h)

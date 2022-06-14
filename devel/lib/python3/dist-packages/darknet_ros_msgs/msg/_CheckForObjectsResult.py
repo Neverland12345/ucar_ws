@@ -281,6 +281,12 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
+_struct_h3I = None
+def _get_struct_h3I():
+    global _struct_h3I
+    if _struct_h3I is None:
+        _struct_h3I = struct.Struct("<h3I")
+    return _struct_h3I
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I
@@ -293,9 +299,3 @@ def _get_struct_d4qh():
     if _struct_d4qh is None:
         _struct_d4qh = struct.Struct("<d4qh")
     return _struct_d4qh
-_struct_h3I = None
-def _get_struct_h3I():
-    global _struct_h3I
-    if _struct_h3I is None:
-        _struct_h3I = struct.Struct("<h3I")
-    return _struct_h3I

@@ -390,18 +390,18 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_3I = None
-def _get_struct_3I():
-    global _struct_3I
-    if _struct_3I is None:
-        _struct_3I = struct.Struct("<3I")
-    return _struct_3I
 _struct_6f4B = None
 def _get_struct_6f4B():
     global _struct_6f4B
     if _struct_6f4B is None:
         _struct_6f4B = struct.Struct("<6f4B")
     return _struct_6f4B
+_struct_3I = None
+def _get_struct_3I():
+    global _struct_3I
+    if _struct_3I is None:
+        _struct_3I = struct.Struct("<3I")
+    return _struct_3I
 class GetBatteryInfo(object):
   _type          = 'ucar_controller/GetBatteryInfo'
   _md5sum = '0f586d9a0cd4ac8575cd2b82e8d112d3'

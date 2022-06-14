@@ -5,11 +5,11 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
+import darknet_ros_msgs.msg
+import genpy
 import actionlib_msgs.msg
 import std_msgs.msg
-import darknet_ros_msgs.msg
 import sensor_msgs.msg
-import genpy
 
 class CheckForObjectsActionGoal(genpy.Message):
   _md5sum = "5276fa5e1994ff473eead64845a6fd41"
@@ -398,12 +398,6 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_2I = None
-def _get_struct_2I():
-    global _struct_2I
-    if _struct_2I is None:
-        _struct_2I = struct.Struct("<2I")
-    return _struct_2I
 _struct_h3I = None
 def _get_struct_h3I():
     global _struct_h3I
@@ -416,3 +410,9 @@ def _get_struct_BI():
     if _struct_BI is None:
         _struct_BI = struct.Struct("<BI")
     return _struct_BI
+_struct_2I = None
+def _get_struct_2I():
+    global _struct_2I
+    if _struct_2I is None:
+        _struct_2I = struct.Struct("<2I")
+    return _struct_2I

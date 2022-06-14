@@ -7,15 +7,17 @@ import struct
 
 
 class classes(genpy.Message):
-  _md5sum = "e6802d1037088d3136af614c2e78487e"
+  _md5sum = "807f252bc3466dd12378a82941c798f7"
   _type = "darknet_ros_msgs/classes"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """int16 glass_num  
 int16 long_hair_num
 int16 glass_cut_num
-int16 long_hair_cut_num"""
-  __slots__ = ['glass_num','long_hair_num','glass_cut_num','long_hair_cut_num']
-  _slot_types = ['int16','int16','int16','int16']
+int16 long_hair_cut_num
+int16 short_hair_num
+int16 short_hair_cut_num"""
+  __slots__ = ['glass_num','long_hair_num','glass_cut_num','long_hair_cut_num','short_hair_num','short_hair_cut_num']
+  _slot_types = ['int16','int16','int16','int16','int16','int16']
 
   def __init__(self, *args, **kwds):
     """
@@ -25,7 +27,7 @@ int16 long_hair_cut_num"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       glass_num,long_hair_num,glass_cut_num,long_hair_cut_num
+       glass_num,long_hair_num,glass_cut_num,long_hair_cut_num,short_hair_num,short_hair_cut_num
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -42,11 +44,17 @@ int16 long_hair_cut_num"""
         self.glass_cut_num = 0
       if self.long_hair_cut_num is None:
         self.long_hair_cut_num = 0
+      if self.short_hair_num is None:
+        self.short_hair_num = 0
+      if self.short_hair_cut_num is None:
+        self.short_hair_cut_num = 0
     else:
       self.glass_num = 0
       self.long_hair_num = 0
       self.glass_cut_num = 0
       self.long_hair_cut_num = 0
+      self.short_hair_num = 0
+      self.short_hair_cut_num = 0
 
   def _get_types(self):
     """
@@ -61,7 +69,7 @@ int16 long_hair_cut_num"""
     """
     try:
       _x = self
-      buff.write(_get_struct_4h().pack(_x.glass_num, _x.long_hair_num, _x.glass_cut_num, _x.long_hair_cut_num))
+      buff.write(_get_struct_6h().pack(_x.glass_num, _x.long_hair_num, _x.glass_cut_num, _x.long_hair_cut_num, _x.short_hair_num, _x.short_hair_cut_num))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -74,8 +82,8 @@ int16 long_hair_cut_num"""
       end = 0
       _x = self
       start = end
-      end += 8
-      (_x.glass_num, _x.long_hair_num, _x.glass_cut_num, _x.long_hair_cut_num,) = _get_struct_4h().unpack(str[start:end])
+      end += 12
+      (_x.glass_num, _x.long_hair_num, _x.glass_cut_num, _x.long_hair_cut_num, _x.short_hair_num, _x.short_hair_cut_num,) = _get_struct_6h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -89,7 +97,7 @@ int16 long_hair_cut_num"""
     """
     try:
       _x = self
-      buff.write(_get_struct_4h().pack(_x.glass_num, _x.long_hair_num, _x.glass_cut_num, _x.long_hair_cut_num))
+      buff.write(_get_struct_6h().pack(_x.glass_num, _x.long_hair_num, _x.glass_cut_num, _x.long_hair_cut_num, _x.short_hair_num, _x.short_hair_cut_num))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -103,8 +111,8 @@ int16 long_hair_cut_num"""
       end = 0
       _x = self
       start = end
-      end += 8
-      (_x.glass_num, _x.long_hair_num, _x.glass_cut_num, _x.long_hair_cut_num,) = _get_struct_4h().unpack(str[start:end])
+      end += 12
+      (_x.glass_num, _x.long_hair_num, _x.glass_cut_num, _x.long_hair_cut_num, _x.short_hair_num, _x.short_hair_cut_num,) = _get_struct_6h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -113,9 +121,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_4h = None
-def _get_struct_4h():
-    global _struct_4h
-    if _struct_4h is None:
-        _struct_4h = struct.Struct("<4h")
-    return _struct_4h
+_struct_6h = None
+def _get_struct_6h():
+    global _struct_6h
+    if _struct_6h is None:
+        _struct_6h = struct.Struct("<6h")
+    return _struct_6h

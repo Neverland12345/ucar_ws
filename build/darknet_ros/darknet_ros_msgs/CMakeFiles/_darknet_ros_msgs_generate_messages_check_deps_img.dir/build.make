@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ucar/ucar_ws/build
 include darknet_ros/darknet_ros_msgs/CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_img.dir/progress.make
 
 darknet_ros/darknet_ros_msgs/CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_img:
-	cd /home/ucar/ucar_ws/build/darknet_ros/darknet_ros_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/melodic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py darknet_ros_msgs /home/ucar/ucar_ws/src/darknet_ros/darknet_ros_msgs/srv/img.srv sensor_msgs/Image:std_msgs/Header:darknet_ros_msgs/classes
+	cd /home/ucar/ucar_ws/build/darknet_ros/darknet_ros_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/melodic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py darknet_ros_msgs /home/ucar/ucar_ws/src/darknet_ros/darknet_ros_msgs/srv/img.srv darknet_ros_msgs/classes:sensor_msgs/Image:std_msgs/Header
 
 _darknet_ros_msgs_generate_messages_check_deps_img: darknet_ros/darknet_ros_msgs/CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_img
 _darknet_ros_msgs_generate_messages_check_deps_img: darknet_ros/darknet_ros_msgs/CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_img.dir/build.make

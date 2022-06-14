@@ -9,7 +9,7 @@
 
   <include file="$(find ydlidar)/launch/ydlidar.launch" > </include>
 
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find ucar_nav)/maps/map_xunfei1.yaml" output="screen">
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find ucar_nav)/maps/xunfei2.yaml" output="screen">
    <param name="frame_id" value="map" />
   </node> 
 
@@ -60,14 +60,14 @@
     <param name="camera_info_url" type="string" value="file://$(find ucar_nav)/launch/config/ost.yaml"/> 
   </node>
 <!--marker-->
-    <node pkg="aruco_ros" type="marker_publisher" name="aruco_marker_publisher" output="screen">
+    <!-- <node pkg="aruco_ros" type="marker_publisher" name="aruco_marker_publisher" output="screen">
         <remap from="/camera_info" to="/usb_cam/camera_info" />
         <remap from="/image" to="/usb_cam/image_raw" />
         <param name="image_is_rectified" value="True"/>
         <param name="marker_size"        value="$(arg markerSize)"/>
         <param name="reference_frame"    value="$camera_frame"/>  
         <param name="camera_frame"       value="$camera_frame"/>
-    </node>
+    </node> -->
 
  
 <!--*****************others******************-->

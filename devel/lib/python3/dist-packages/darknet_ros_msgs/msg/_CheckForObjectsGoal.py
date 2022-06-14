@@ -5,8 +5,8 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
-import std_msgs.msg
 import sensor_msgs.msg
+import std_msgs.msg
 
 class CheckForObjectsGoal(genpy.Message):
   _md5sum = "c2342f9acc4aac63fdd632073dd76c7d"
@@ -273,6 +273,12 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
+_struct_BI = None
+def _get_struct_BI():
+    global _struct_BI
+    if _struct_BI is None:
+        _struct_BI = struct.Struct("<BI")
+    return _struct_BI
 _struct_2I = None
 def _get_struct_2I():
     global _struct_2I
@@ -285,9 +291,3 @@ def _get_struct_h3I():
     if _struct_h3I is None:
         _struct_h3I = struct.Struct("<h3I")
     return _struct_h3I
-_struct_BI = None
-def _get_struct_BI():
-    global _struct_BI
-    if _struct_BI is None:
-        _struct_BI = struct.Struct("<BI")
-    return _struct_BI

@@ -60,22 +60,22 @@ aruco_ros/aruco_msgs/CMakeFiles/aruco_msgs_generate_messages_py: /home/ucar/ucar
 
 /home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_Marker.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_Marker.py: /home/ucar/ucar_ws/src/aruco_ros/aruco_msgs/msg/Marker.msg
-/home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_Marker.py: /opt/ros/melodic/share/geometry_msgs/msg/Point.msg
-/home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_Marker.py: /opt/ros/melodic/share/geometry_msgs/msg/PoseWithCovariance.msg
 /home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_Marker.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+/home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_Marker.py: /opt/ros/melodic/share/geometry_msgs/msg/PoseWithCovariance.msg
 /home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_Marker.py: /opt/ros/melodic/share/geometry_msgs/msg/Pose.msg
 /home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_Marker.py: /opt/ros/melodic/share/geometry_msgs/msg/Quaternion.msg
+/home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_Marker.py: /opt/ros/melodic/share/geometry_msgs/msg/Point.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ucar/ucar_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG aruco_msgs/Marker"
 	cd /home/ucar/ucar_ws/build/aruco_ros/aruco_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ucar/ucar_ws/src/aruco_ros/aruco_msgs/msg/Marker.msg -Iaruco_msgs:/home/ucar/ucar_ws/src/aruco_ros/aruco_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p aruco_msgs -o /home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg
 
 /home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_MarkerArray.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_MarkerArray.py: /home/ucar/ucar_ws/src/aruco_ros/aruco_msgs/msg/MarkerArray.msg
-/home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_MarkerArray.py: /opt/ros/melodic/share/geometry_msgs/msg/Point.msg
-/home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_MarkerArray.py: /opt/ros/melodic/share/geometry_msgs/msg/PoseWithCovariance.msg
-/home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_MarkerArray.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_MarkerArray.py: /home/ucar/ucar_ws/src/aruco_ros/aruco_msgs/msg/Marker.msg
+/home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_MarkerArray.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+/home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_MarkerArray.py: /opt/ros/melodic/share/geometry_msgs/msg/PoseWithCovariance.msg
 /home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_MarkerArray.py: /opt/ros/melodic/share/geometry_msgs/msg/Pose.msg
 /home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_MarkerArray.py: /opt/ros/melodic/share/geometry_msgs/msg/Quaternion.msg
+/home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg/_MarkerArray.py: /opt/ros/melodic/share/geometry_msgs/msg/Point.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ucar/ucar_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG aruco_msgs/MarkerArray"
 	cd /home/ucar/ucar_ws/build/aruco_ros/aruco_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ucar/ucar_ws/src/aruco_ros/aruco_msgs/msg/MarkerArray.msg -Iaruco_msgs:/home/ucar/ucar_ws/src/aruco_ros/aruco_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p aruco_msgs -o /home/ucar/ucar_ws/devel/lib/python3/dist-packages/aruco_msgs/msg
 
